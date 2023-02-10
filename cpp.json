@@ -390,6 +390,16 @@
         ],
         "description": ""
     },
+    "dll": {
+        "prefix": "dll",
+        "body": [
+            "do",
+            "{",
+            "    $0",
+            "} while ($1);\n",
+        ],
+        "description": ""
+    },
     "wll": {
         "prefix": "wll",
         "body": [
@@ -474,11 +484,11 @@
             "    {",
             "        return sz(mp);",
             "    }",
-            "    inline int operator()(T x)",
+            "    inline bool operator()(T x)",
             "    {",
             "        return (mp.count(x) != 0);",
             "    }",
-            "    inline int &operator[](T x)",
+            "    inline long long &operator[](T x)",
             "    {",
             "        return mp[x];",
             "    }",
