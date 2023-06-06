@@ -429,10 +429,10 @@
         ],
         "description": ""
     },
-    "mycss": {
-        "prefix": "mycss",
+    "mycin": {
+        "prefix": "mycin",
         "body": [
-            "string input_txt = $1;",
+            "string input_txt = \"mycin.txt\";",
             "ifstream ifs(input_txt);",
             "cin.rdbuf(ifs.rdbuf());\n",
         ],
@@ -2614,6 +2614,7 @@
             "        _scale[1][1] = y;",
             "        return mat = _scale * mat;",
             "    }",
+            "    // 加算する",
             "    matrix move(matrix &mat, double x, double y)",
             "    {",
             "        _move[0][2] = x;",
