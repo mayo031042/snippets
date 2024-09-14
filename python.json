@@ -1,0 +1,78 @@
+{
+    // Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "pall": {
+        "prefix": "pall",
+        "body": [
+            "kgl: format for creating model",
+            "ccsv: cin csv",
+            "ofn: output for now",
+            "rpt: report"
+        ],
+    },
+    "kgl": {
+        "prefix": "kgl",
+        "body": [
+            "import pandas as pd",
+            "from ydata_profiling import ProfileReport",
+            "import numpy as np",
+            "import matplotlib.pyplot as plt",
+            "import seaborn as sns",
+            "",
+            "# ccsv to read_csv",
+            "$0",
+            "# ./name and define obj_v",
+            "print(dt_train.columns.tolist())",
+        ],
+    },
+    "ccsv": {
+        "prefix": "ccsv",
+        "body": [
+            "dt_$1 = pd.read_csv(\"$2\")",
+            "$0",
+        ],
+    },
+    "ofn": {
+        "prefix": "ofn",
+        "body": [
+            "dt_$1.sample(min(dt_$1.shape[0] / 10, 30))",
+            "# print(dt_$1.columns.tolist())",
+            "# dt_$1.describe()",
+            "$0",
+        ],
+    },
+    "rpt": {
+        "prefix": "rpt",
+        "body": [
+            "profile = ProfileReport(dt_$1, title=\"Profiling Report\")",
+            "profile.to_notebook_iframe()",
+            "$0",
+        ],
+    },
+    "cplt": {
+        "prefix": "cplt",
+        "body": [
+            "sns.countplot(x=\"$2\", hue=obj_v, data=dt_$1)",
+            "$0",
+        ],
+    },
+    "split": {
+        "prefix": "@tts",
+        "body": [
+            "from sklearn.model_selection import train_test_split\n",
+            "train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)",
+            "$0",
+        ],
+    }
+}

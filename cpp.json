@@ -2,14 +2,18 @@
     "pSHOW": {
         "prefix": "P??",
         "body": [
-            "// p??",
-            "// vmin: vector[all]--;",
+            "// p??: print this message",
+            "// tnap: (?:)",
+            "// abso: std::abs",
+            "// nn: col ans",
             "// mm: mod",
+            "// ll,ss,dd,vv,ww,qq: type",
+            "// ctt,cct,cii,cci,cll,ccl,css,cvt,cvvt: cin type",
+            "// cop,col,pol: cout type",
+            "// vmin: vector[all]--;",
             "// pRUNL: run length encoding",
             "// mmr: memory",
             "// pSAND: sand",
-            "// abso: std::abs",
-            "// tnap: (?:)",
             "// pGCD: gcd",
             "// pPOW<-mm : power",
             "// pNCK<-mm : nck",
@@ -37,8 +41,7 @@
             "// pAFFINE<-pMATRIX : Affine Transform",
             "// double x <  y  ->  x <  y - eps 厳しく",
             "// double x <= y  ->  x <= y + eps 甘く",
-        ],
-        "description": ""
+        ]
     },
     "p": {
         "prefix": "p",
@@ -89,15 +92,13 @@
             "{",
             "\t$0",
             "}",
-        ],
-        "description": ""
+        ]
     },
     "ternary operator": {
         "prefix": "tnap",
         "body": [
             "(($1) ? $2 : $3)$0",
-        ],
-        "description": ""
+        ]
     },
     "pCNTMAP": {
         "prefix": "pCNTMAP",
@@ -139,211 +140,98 @@
             "        return mp.at(i);",
             "    }",
             "};\n",
-        ],
-        "description": ""
-    },
-    "abso": {
-        "prefix": "abso",
-        "body": [
-            "std::abs($1)$0",
-        ],
-        "description": ""
+        ]
     },
     "nn": {
         "prefix": "nn",
         "body": [
             "cout << ans << endl;\n$0",
-        ],
-        "description": ""
+        ]
     },
     "ll": {
         "prefix": "ll",
         "body": [
             "long long $0",
-        ],
-        "description": ""
+        ]
     },
     "ss": {
         "prefix": "ss",
         "body": [
             "string $0",
-        ],
-        "description": ""
+        ]
     },
     "dd": {
         "prefix": "dd",
         "body": [
             "double $0",
-        ],
-        "description": ""
-    },
-    "pCLASS": {
-        "prefix": "pCLASS",
-        "body": [
-            "template <typename T>",
-            "class $1",
-            "{",
-            "public:\n\t$0",
-            "    $1(){}",
-            "    inline int &operator[](int i)",
-            "\t{\n\t}",
-            "};",
-        ],
-        "description": ""
-    },
-    "rrepite": {
-        "prefix": "rrepite",
-        "body": [
-            "for (auto $1 = $2.rbegin(); $1 != $2.rend(); $1++)",
-            "{ // rrepite",
-            "\t$0",
-            "} // rrepite\n",
-        ],
-        "description": ""
-    },
-    "repite": {
-        "prefix": "repite",
-        "body": [
-            "for (auto $1 = $2.begin(); $1 != $2.end(); $1++)",
-            "{",
-            "\t$0",
-            "}\n",
-        ],
-        "description": ""
-    },
-    "rep": {
-        "prefix": "rep",
-        "body": [
-            "for (int $1 = $2; $1 < $3; $1++)",
-            "{",
-            "\t$0",
-            "}\n",
-        ],
-        "description": ""
-    },
-    "rrep": {
-        "prefix": "rrep",
-        "body": [
-            "// reverse",
-            "for (int $1 = $3 - 1; $1 >= $2; $1--)",
-            "{",
-            "\t$0",
-            "}\n",
-        ],
-        "description": ""
+        ]
     },
     "ww": {
         "prefix": "ww",
         "body": [
             "vector<vector<$1>> $2($3, vector<$1>($4, $5));\n",
-        ],
-        "description": ""
+        ]
     },
     "vv": {
         "prefix": "vv",
         "body": [
             "vector<$0>",
-        ],
-        "description": ""
+        ]
     },
     "qq": {
         "prefix": "qq",
         "body": [
             "queue<$0>",
-        ],
-        "description": ""
-    },
-    "all": {
-        "prefix": "all",
-        "body": [
-            "$1.begin(), $1.end()$0"
-        ],
-        "description": ""
-    },
-    "rall": {
-        "prefix": "rall",
-        "body": [
-            "$1.rbegin(), $1.rend()$0"
-        ],
-        "description": ""
-    },
-    "cop": {
-        "prefix": "cop",
-        "body": [
-            "cout << $1 << \" \";",
-            "$0cout << endl;",
-        ],
-        "description": ""
-    },
-    "col": {
-        "prefix": "col",
-        "body": [
-            "cout << $1 << endl;\n",
-        ],
-        "description": ""
-    },
-    "pol": {
-        "prefix": "pol",
-        "body": [
-            "printf(\"%.9lf\\n\", $1);\n",
-        ],
-        "description": ""
+        ]
     },
     "ctt": {
         "prefix": "ctt",
         "body": [
             "$1 $2;",
             "cin >> $2;\n",
-        ],
-        "description": ""
+        ]
     },
     "cct": {
         "prefix": "cct",
         "body": [
             "$1 $2, $3;",
             "cin >> $2 >> $3;\n",
-        ],
-        "description": ""
+        ]
     },
     "cii": {
         "prefix": "cii",
         "body": [
             "int $1;",
             "cin >> $1;\n",
-        ],
-        "description": ""
+        ]
     },
     "cci": {
         "prefix": "cci",
         "body": [
             "int $1, $2;",
             "cin >> $1 >> $2;\n",
-        ],
-        "description": ""
+        ]
     },
     "cll": {
         "prefix": "cll",
         "body": [
             "long long int $1;",
             "cin >> $1;\n",
-        ],
-        "description": ""
+        ]
     },
     "ccl": {
         "prefix": "ccl",
         "body": [
             "long long int $1, $2;",
             "cin >> $1 >> $2;\n",
-        ],
-        "description": ""
+        ]
     },
     "css": {
         "prefix": "css",
         "body": [
             "string $1;",
             "cin >> $1;\n",
-        ],
-        "description": ""
+        ]
     },
     "cvt": {
         "prefix": "cvt",
@@ -353,8 +241,7 @@
             "{",
             "\tcin >> $2[i];",
             "}\n",
-        ],
-        "description": ""
+        ]
     },
     "cvvt": {
         "prefix": "cvvt",
@@ -367,76 +254,88 @@
             "\t\tcin >> $2[i][j];",
             "\t}",
             "}\n",
-        ],
-        "description": ""
+        ]
     },
-    "rpt": {
-        "prefix": "rpt",
+    "cop": {
+        "prefix": "cop",
         "body": [
-            "cout << $1 << endl;",
-            "return 0;\n$0"
-        ],
-        "description": ""
+            "cout << $1 << \" \";",
+            "$0cout << endl;",
+        ]
     },
-    "ret": {
-        "prefix": "ret",
+    "col": {
+        "prefix": "col",
         "body": [
-            "return $1;\n$0"
-        ],
-        "description": ""
+            "std::cout << $1 << std::endl;\n",
+        ]
     },
-    "vmin": {
-        "prefix": "vmin",
+    "pol": {
+        "prefix": "pol",
         "body": [
-            "for (int i = 0; i < $2; i++)",
+            "printf(\"%.9lf\\n\", $1);\n",
+        ]
+    },
+    "mm": {
+        "prefix": "mm",
+        "body": [
+            "constexpr long long int P = ${1|1e9 + 7,998244353|};",
+        ]
+    },
+    "abso": {
+        "prefix": "abso",
+        "body": [
+            "std::abs($1)$0",
+        ]
+    },
+    "pCLASS": {
+        "prefix": "pCLASS",
+        "body": [
+            "template <typename T>",
+            "class $1",
             "{",
-            "\t$1[i]--;",
-            "}\n",
-        ],
-        "description": ""
+            "public:\n\t$0",
+            "    $1(){}",
+            "    inline int &operator[](int i)",
+            "\t{\n\t}",
+            "};",
+        ]
     },
-    "ato": {
-        "prefix": "ato",
+    "rrepite": {
+        "prefix": "rrepite",
         "body": [
-            "for (auto &$1 : $2)",
+            "for (auto $1 = $2.rbegin(); $1 != $2.rend(); $1++)",
+            "{ // rrepite",
+            "\t$0",
+            "} // rrepite\n",
+        ]
+    },
+    "repite": {
+        "prefix": "repite",
+        "body": [
+            "for (auto $1 = $2.begin(); $1 != $2.end(); $1++)",
             "{",
             "\t$0",
             "}\n",
-        ],
-        "description": ""
+        ]
     },
-    "atf": {
-        "prefix": "atf",
+    "rep": {
+        "prefix": "rep",
         "body": [
-            "auto $2 = [&]($3) -> $1",
+            "for (int $1 = $2; $1 < $3; $1++)",
             "{",
-            "    $0",
-            "};\n",
-        ],
-        "description": ""
+            "\t$0",
+            "}\n",
+        ]
     },
-    "srt": {
-        "prefix": "srt",
+    "rrep": {
+        "prefix": "rrep",
         "body": [
-            "sort($1.begin(), $1.end());\n"
-        ],
-        "description": ""
-    },
-    "rsrt": {
-        "prefix": "rsrt",
-        "body": [
-            "sort($1.rbegin(), $1.rend());\n"
-        ],
-        "description": ""
-    },
-    "mycin": {
-        "prefix": "mycin",
-        "body": [
-            "string input_txt = \"mycin.txt\";",
-            "ifstream ifs(input_txt);",
-            "cin.rdbuf(ifs.rdbuf());\n",
-        ],
-        "description": ""
+            "// reverse",
+            "for (int $1 = $3 - 1; $1 >= $2; $1--)",
+            "{",
+            "\t$0",
+            "}\n",
+        ]
     },
     "dll": {
         "prefix": "dll",
@@ -445,8 +344,7 @@
             "{",
             "    $0",
             "} while ($1);\n",
-        ],
-        "description": ""
+        ]
     },
     "wll": {
         "prefix": "wll",
@@ -455,22 +353,117 @@
             "{",
             "    $0",
             "}\n",
-        ],
-        "description": ""
+        ]
+    },
+    "all": {
+        "prefix": "all",
+        "body": [
+            "$1.begin(), $1.end()$0"
+        ]
+    },
+    "rall": {
+        "prefix": "rall",
+        "body": [
+            "$1.rbegin(), $1.rend()$0"
+        ]
+    },
+    "rpt": {
+        "prefix": "rpt",
+        "body": [
+            "cout << $1 << endl;",
+            "return 0;\n$0"
+        ]
+    },
+    "ret": {
+        "prefix": "ret",
+        "body": [
+            "return $1;\n$0"
+        ]
+    },
+    "vmin": {
+        "prefix": "vmin",
+        "body": [
+            "for (int i = 0; i < $2; i++)",
+            "{",
+            "\t$1[i]--;",
+            "}\n",
+        ]
+    },
+    "ato": {
+        "prefix": "ato",
+        "body": [
+            "for (auto &$1 : $2)",
+            "{",
+            "\t$0",
+            "}\n",
+        ]
+    },
+    "atf": {
+        "prefix": "atf",
+        "body": [
+            "auto $2 = [&]($3) -> $1",
+            "{",
+            "    $0",
+            "};\n",
+        ]
+    },
+    "srt": {
+        "prefix": "srt",
+        "body": [
+            "sort($1.begin(), $1.end());\n"
+        ]
+    },
+    "rsrt": {
+        "prefix": "rsrt",
+        "body": [
+            "sort($1.rbegin(), $1.rend());\n"
+        ]
+    },
+    "mycinfile": {
+        "prefix": "mycinfile",
+        "body": [
+            "class file",
+            "{",
+            "public:",
+            "    vector<string> v;",
+            "    file(string file_path)",
+            "    {",
+            "        ifstream ifs(file_path);",
+            "        string s;",
+            "        while (getline(ifs, s))",
+            "        {",
+            "            v.push_back(s);",
+            "        }",
+            "        ifs.close();",
+            "    }",
+            "    inline string &operator[](int i)",
+            "    {",
+            "        return v[i];",
+            "    }",
+            "    std::__1::vector<std::__1::string>::iterator begin()",
+            "    {",
+            "        return v.begin();",
+            "    }",
+            "    std::__1::vector<std::__1::string>::iterator end()",
+            "    {",
+            "        return v.end();",
+            "    }",
+            "};\n",
+        ]
+    },
+    "mycin": {
+        "prefix": "mycin",
+        "body": [
+            "string input_txt = \"mycin.txt\";",
+            "ifstream ifs(input_txt);",
+            "cin.rdbuf(ifs.rdbuf());\n",
+        ]
     },
     "pOPER": {
         "prefix": "pOPER",
         "body": [
             "bool operator>(const $1 &L$1, const $1 R$1) { return L$1.$2 > R$1.$2; }\n$0",
-        ],
-        "description": ""
-    },
-    "mm": {
-        "prefix": "mm",
-        "body": [
-            "constexpr long long int P = ${1|1e9 + 7,998244353|};",
-        ],
-        "description": ""
+        ]
     },
     "pRUNL": {
         "prefix": "pRUNL",
@@ -517,8 +510,7 @@
             "        return sz(v);",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pMMR": {
         "prefix": "pMMR",
@@ -541,8 +533,7 @@
             "        return mp[x];",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pSAND": {
         "prefix": "pSAND",
@@ -564,8 +555,7 @@
             "        return v.at(i + buf);",
             "    }",
             "};",
-        ],
-        "description": ""
+        ]
     },
     "next_combination": {
         "prefix": "next_combination",
@@ -617,8 +607,7 @@
             "}",
             "do {} while (next_combination($1.begin(), $1.begin() + $2, $1.end()));",
             "",
-        ],
-        "description": ""
+        ]
     },
     // Algorithm
     "pIMS": {
@@ -676,8 +665,7 @@
             "        return range(l, n - 2);",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pIMS2": {
         "prefix": "pIMS2",
@@ -753,8 +741,7 @@
             "        return range(lx, ly, h - 2, w - 2);",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pBINS": {
         "prefix": "pBINS",
@@ -782,8 +769,7 @@
             "    }",
             "};",
             "BINS bs;\n",
-        ],
-        "description": ""
+        ]
     },
     "pGCD": {
         "prefix": "pGCD",
@@ -818,8 +804,7 @@
             "    }",
             "};",
             "gcd GCD;\n",
-        ],
-        "description": ""
+        ]
     },
     "pMODINV": {
         "prefix": "pMODINV",
@@ -838,8 +823,7 @@
             "",
             "    return (((u %= mod) < 0) ? u + mod : u);",
             "}\n",
-        ],
-        "description": ""
+        ]
     },
     "pPWR": {
         "prefix": "pPWR",
@@ -933,8 +917,7 @@
             "    bool operator<(const gg &g) const { return this->l < g.l; }",
             "    bool operator>(const gg &g) const { return this->l > g.l; }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pFF": {
         "prefix": "pFF",
@@ -1239,8 +1222,7 @@
             "        return dist.at(i);",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pBELF": {
         "prefix": "pBELF",
@@ -1437,8 +1419,7 @@
             "        return par[u][0];",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pPRIM": {
         "prefix": "pPRIM",
@@ -1488,8 +1469,7 @@
             "        return f[i];",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pTPS": {
         "prefix": "pTPS",
@@ -1566,8 +1546,7 @@
             "    }",
             "};",
             "// グラフは連結であることが前提とされる\n",
-        ],
-        "description": ""
+        ]
     },
     "pSCC": {
         "prefix": "pSCC",
@@ -1683,8 +1662,7 @@
             "        return scc[i];",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pANGLE": {
         "prefix": "pANGLE",
@@ -1714,8 +1692,7 @@
             "        return _rad = r;",
             "    }",
             "};",
-        ],
-        "description": ""
+        ]
     },
     "pROTATE": {
         "prefix": "pROTATE",
@@ -1757,8 +1734,7 @@
             "    }",
             "};",
             "#endif // __Pnt__\n",
-        ],
-        "description": ""
+        ]
     },
     "pUF": {
         "prefix": "pUF",
@@ -1835,8 +1811,7 @@
             "};",
             "// UF uf(頂点数);",
             "// is_same(x, y), unite(x, y), uf[x]:所属grp\n",
-        ],
-        "description": ""
+        ]
     },
     "pDAY": {
         "prefix": "pDAY",
@@ -1948,8 +1923,7 @@
             "        return dow[_day_of_week(y, m, d)] + \"day\";",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pNTT": {
         "prefix": "pNTT",
@@ -2023,8 +1997,7 @@
             "        return \"0\";",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pBIT": {
         "prefix": "pBIT",
@@ -2081,8 +2054,7 @@
             "        return res;",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pSEG": {
         "prefix": "pSEG",
@@ -2193,8 +2165,7 @@
             "        return $0;",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pLSG": {
         "prefix": "pLSG",
@@ -2338,8 +2309,7 @@
             "        return $0;",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pPRIME": {
         "prefix": "pPRIME",
@@ -2428,8 +2398,7 @@
             "        return res;",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pCLCL": {
         "prefix": "pCLCL",
@@ -2489,8 +2458,7 @@
             "        $0",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pRESTORE": {
         "prefix": "pRESTORE",
@@ -2542,8 +2510,7 @@
             "// compress[i] -> comressed_random[i]",
             "// decrypt[i]  -> restoration_random[i]",
             "// re[i]       -> random[decrypt[i]] == sorted[i]\n",
-        ],
-        "description": ""
+        ]
     },
     "pMATRIX": {
         "prefix": "pMATRIX",
@@ -2591,8 +2558,7 @@
             "        return v.at(i);",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
     "pAFFINE": {
         "prefix": "pAFFINE",
@@ -2639,7 +2605,6 @@
             "        return mat = _rotate * mat;",
             "    }",
             "};\n",
-        ],
-        "description": ""
+        ]
     },
 }
