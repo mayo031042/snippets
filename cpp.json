@@ -1,20 +1,31 @@
 {
-    "pSHOW": {
-        "prefix": "P??",
+    "PALL": {
+        "prefix": "PALL",
         "body": [
             "// p??: print this message",
-            "// tnap: (?:)",
-            "// abso: std::abs",
             "// nn: col ans",
-            "// mm: mod",
             "// ll,ss,dd,vv,ww,qq: type",
             "// ctt,cct,cii,cci,cll,ccl,css,cvt,cvvt: cin type",
             "// cop,col,pol: cout type",
+            "// rep,rrep,repite,rrepite,dll,wll,ato: loop",
+            "// all,rall: range",
+            "// srt,rsrt: sort",
+            "// ret,atf: return...lambda",
             "// vmin: vector[all]--;",
+            "// mm: mod",
+            "// tnap: (?:)",
+            "// abso: std::abs",
+        ]
+    },
+    "PPALL": {
+        "prefix": "PPALL",
+        "body": [
+            "// pCLASS: class",
+            "// pDBL: my double",
+            "// pGCD: gcd and lcm",
             "// pRUNL: run length encoding",
             "// mmr: memory",
             "// pSAND: sand",
-            "// pGCD: gcd",
             "// pPOW<-mm : power",
             "// pNCK<-mm : nck",
             "// pRNG: lx, ly, rx, ry",
@@ -39,8 +50,6 @@
             "// pRESTORE: sort and restore",
             "// pMATRIX: matrix",
             "// pAFFINE<-pMATRIX : Affine Transform",
-            "// double x <  y  ->  x <  y - eps 厳しく",
-            "// double x <= y  ->  x <= y + eps 甘く",
         ]
     },
     "p": {
@@ -48,22 +57,19 @@
         "body": [
             "#include <iostream>",
             "#include <fstream>",
-            "#include <vector>",
-            "#include <string>",
             "#include <algorithm>",
-            "#include <queue>",
-            "#include <map>",
-            "#include <set>",
             "#include <bitset>",
             "#include <cmath>",
-            "#include <cassert>",
-            "// #include <atcoder/all>",
+            "#include <map>",
+            "#include <string>",
+            "#include <set>",
+            "#include <queue>",
+            "#include <vector>",
             "using namespace std;",
             "template <class T>",
             "using minpq = priority_queue<T, vector<T>, greater<T>>;",
             "const int dx[8] = {1, 0, -1, 0, 1, 1, -1, -1};",
             "const int dy[8] = {0, 1, 0, -1, 1, -1, -1, 1};",
-            "#define pii pair<int, int>",
             "#define pll pair<long long int, long long int>",
             "#define pb push_back",
             "#define eb emplace_back",
@@ -80,66 +86,15 @@
             "    return x = min(x, y);",
             "}",
             "template <class T>",
-            "void align(T &x, T &y)",
+            "void align(T &x, T &y, bool asc = true)",
             "{",
-            "    if (x > y)",
-            "    {",
-            "        swap(x, y);",
-            "    }",
+            "    (asc ^ (x < y)) ? swap(x, y) : (void)0;",
             "}",
             "",
             "int main()",
             "{",
-            "\t$0",
+            "    $0",
             "}",
-        ]
-    },
-    "ternary operator": {
-        "prefix": "tnap",
-        "body": [
-            "(($1) ? $2 : $3)$0",
-        ]
-    },
-    "pCNTMAP": {
-        "prefix": "pCNTMAP",
-        "body": [
-            "template <typename T>",
-            "class cntmap",
-            "{",
-            "public:",
-            "    map<T, int> mp;",
-            "    cntmap() {}",
-            "    inline int add(T x)",
-            "    {",
-            "        return ++mp[x];",
-            "    }",
-            "    inline void pop(T x)",
-            "    {",
-            "        if (--mp[x] == 0)",
-            "        {",
-            "            mp.erase(x);",
-            "        }",
-            "    }",
-            "    // 値が存在していることに注意",
-            "    inline T maxV()",
-            "    {",
-            "        return mp.rbegin()->first;",
-            "    }",
-            "    // 値が存在していることに注意",
-            "    inline T minV()",
-            "    {",
-            "        return mp.begin()->first;",
-            "    }",
-            "    int size()",
-            "    {",
-            "        return sz(mp);",
-            "    }",
-            "",
-            "    inline int &operator[](int i)",
-            "    {",
-            "        return mp.at(i);",
-            "    }",
-            "};\n",
         ]
     },
     "nn": {
@@ -175,62 +130,62 @@
     "vv": {
         "prefix": "vv",
         "body": [
-            "vector<$0>",
+            "vector<$1> $0",
         ]
     },
     "qq": {
         "prefix": "qq",
         "body": [
-            "queue<$0>",
+            "queue<$1> $0",
         ]
     },
     "ctt": {
         "prefix": "ctt",
         "body": [
             "$1 $2;",
-            "cin >> $2;\n",
+            "cin >> $2;\n$0",
         ]
     },
     "cct": {
         "prefix": "cct",
         "body": [
             "$1 $2, $3;",
-            "cin >> $2 >> $3;\n",
+            "cin >> $2 >> $3;\n$0",
         ]
     },
     "cii": {
         "prefix": "cii",
         "body": [
             "int $1;",
-            "cin >> $1;\n",
+            "cin >> $1;\n$0",
         ]
     },
     "cci": {
         "prefix": "cci",
         "body": [
             "int $1, $2;",
-            "cin >> $1 >> $2;\n",
+            "cin >> $1 >> $2;\n$0",
         ]
     },
     "cll": {
         "prefix": "cll",
         "body": [
             "long long int $1;",
-            "cin >> $1;\n",
+            "cin >> $1;\n$0",
         ]
     },
     "ccl": {
         "prefix": "ccl",
         "body": [
             "long long int $1, $2;",
-            "cin >> $1 >> $2;\n",
+            "cin >> $1 >> $2;\n$0",
         ]
     },
     "css": {
         "prefix": "css",
         "body": [
             "string $1;",
-            "cin >> $1;\n",
+            "cin >> $1;\n$0",
         ]
     },
     "cvt": {
@@ -240,7 +195,7 @@
             "for (int i = 0; i < $3; i++)",
             "{",
             "\tcin >> $2[i];",
-            "}\n",
+            "}\n$0",
         ]
     },
     "cvvt": {
@@ -253,7 +208,7 @@
             "\t{",
             "\t\tcin >> $2[i][j];",
             "\t}",
-            "}\n",
+            "}\n$0",
         ]
     },
     "cop": {
@@ -273,31 +228,6 @@
         "prefix": "pol",
         "body": [
             "printf(\"%.9lf\\n\", $1);\n",
-        ]
-    },
-    "mm": {
-        "prefix": "mm",
-        "body": [
-            "constexpr long long int P = ${1|1e9 + 7,998244353|};",
-        ]
-    },
-    "abso": {
-        "prefix": "abso",
-        "body": [
-            "std::abs($1)$0",
-        ]
-    },
-    "pCLASS": {
-        "prefix": "pCLASS",
-        "body": [
-            "template <typename T>",
-            "class $1",
-            "{",
-            "public:\n\t$0",
-            "    $1(){}",
-            "    inline int &operator[](int i)",
-            "\t{\n\t}",
-            "};",
         ]
     },
     "rrepite": {
@@ -367,13 +297,6 @@
             "$1.rbegin(), $1.rend()$0"
         ]
     },
-    "rpt": {
-        "prefix": "rpt",
-        "body": [
-            "cout << $1 << endl;",
-            "return 0;\n$0"
-        ]
-    },
     "ret": {
         "prefix": "ret",
         "body": [
@@ -383,9 +306,9 @@
     "vmin": {
         "prefix": "vmin",
         "body": [
-            "for (int i = 0; i < $2; i++)",
+            "for (auto &x : $1)",
             "{",
-            "\t$1[i]--;",
+            "\tx--;",
             "}\n",
         ]
     },
@@ -419,44 +342,129 @@
             "sort($1.rbegin(), $1.rend());\n"
         ]
     },
-    "mycinfile": {
-        "prefix": "mycinfile",
+    "mm": {
+        "prefix": "mm",
         "body": [
-            "class file",
-            "{",
-            "public:",
-            "    vector<string> v;",
-            "    file(string file_path)",
-            "    {",
-            "        ifstream ifs(file_path);",
-            "        string s;",
-            "        while (getline(ifs, s))",
-            "        {",
-            "            v.push_back(s);",
-            "        }",
-            "        ifs.close();",
-            "    }",
-            "    inline string &operator[](int i)",
-            "    {",
-            "        return v[i];",
-            "    }",
-            "    std::__1::vector<std::__1::string>::iterator begin()",
-            "    {",
-            "        return v.begin();",
-            "    }",
-            "    std::__1::vector<std::__1::string>::iterator end()",
-            "    {",
-            "        return v.end();",
-            "    }",
-            "};\n",
+            "constexpr long long int P = ${1|1e9 + 7,998244353|};",
         ]
     },
-    "mycin": {
-        "prefix": "mycin",
+    "ternary operator": {
+        "prefix": "tnap",
         "body": [
-            "string input_txt = \"mycin.txt\";",
-            "ifstream ifs(input_txt);",
-            "cin.rdbuf(ifs.rdbuf());\n",
+            "(($1) ? $2 : $3)$0",
+        ]
+    },
+    "abso": {
+        "prefix": "abso",
+        "body": [
+            "std::abs($1)$0",
+        ]
+    },
+    "pCLASS": {
+        "prefix": "pCLASS",
+        "body": [
+            "template <typename T>",
+            "class $1",
+            "{",
+            "public:\n\t$0",
+            "    $1(){}",
+            "    inline int &operator[](int i)",
+            "\t{\n\t}",
+            "};",
+        ]
+    },
+    "pDBL": {
+        "prefix": "pDBL",
+        "body": [
+            "class dbl",
+            "{",
+            "    static constexpr double eps = 1e-7;",
+            "    double v;",
+            "",
+            "public:",
+            "    dbl() { cin >> v; }",
+            "    dbl(double v_) : v(v_) {}",
+            "    operator double() const { return v; }",
+            "    bool operator<(const dbl &other) const { return v < other.v - eps; }",
+            "    bool operator>(const dbl &other) const { return v > other.v + eps; }",
+            "};",
+        ]
+    },
+    "pGCD": {
+        "prefix": "pGCD",
+        "body": [
+            "class gcd",
+            "{",
+            "    using T = long long int;",
+            "    T _gcd(T x, T y)",
+            "    {",
+            "        return (y ? _gcd(y, x % y) : x);",
+            "    }",
+            "",
+            "public:",
+            "    T operator()(T first)",
+            "    {",
+            "        return first;",
+            "    }",
+            "    template <class... Rest>",
+            "    T operator()(T first, Rest... rest)",
+            "    {",
+            "        return _gcd(first, this->operator()(rest...));",
+            "    }",
+            "    T lcm(T first)",
+            "    {",
+            "        return first;",
+            "    }",
+            "    template <class... Rest>",
+            "    T lcm(T first, Rest... rest)",
+            "    {",
+            "        T res = lcm(rest...);",
+            "        return first / _gcd(first, res) * res;",
+            "    }",
+            "};",
+            "gcd GCD;\n",
+        ]
+    },
+    "pCNTMAP": {
+        "prefix": "pCNTMAP",
+        "body": [
+            "template <typename T>",
+            "class cntmap",
+            "{",
+            "public:",
+            "    map<T, int> mp;",
+            "    cntmap() {}",
+            "    inline int add(T x)",
+            "    {",
+            "        return ++mp[x];",
+            "    }",
+            "    inline void pop(T x)",
+            "    {",
+            "        if (--mp[x] == 0)",
+            "        {",
+            "            mp.erase(x);",
+            "        }",
+            "    }",
+            "    // 値が存在していることに注意",
+            "    inline T maxV()",
+            "    {",
+            "        return mp.rbegin()->first;",
+            "    }",
+            "    // 値が存在していることに注意",
+            "    inline T minV()",
+            "    {",
+            "        return mp.begin()->first;",
+            "    }",
+            "    int size()",
+            "    {",
+            "        return sz(mp);",
+            "    }",
+            "",
+            "    inline int &operator[](int i)",
+            "    {",
+            "        return mp.at(i);",
+            "    }",
+            "};\n",
         ]
     },
     "pOPER": {
@@ -769,41 +777,6 @@
             "    }",
             "};",
             "BINS bs;\n",
-        ]
-    },
-    "pGCD": {
-        "prefix": "pGCD",
-        "body": [
-            "class gcd",
-            "{",
-            "    using T = long long int;",
-            "    T _gcd(T x, T y)",
-            "    {",
-            "        return (y ? _gcd(y, x % y) : x);",
-            "    }",
-            "",
-            "public:",
-            "    T operator()(T first)",
-            "    {",
-            "        return first;",
-            "    }",
-            "    template <class... Rest>",
-            "    T operator()(T first, Rest... rest)",
-            "    {",
-            "        return _gcd(first, this->operator()(rest...));",
-            "    }",
-            "    T lcm(T first)",
-            "    {",
-            "        return first;",
-            "    }",
-            "    template <class... Rest>",
-            "    T lcm(T first, Rest... rest)",
-            "    {",
-            "        T res = lcm(rest...);",
-            "        return first / _gcd(first, res) * res;",
-            "    }",
-            "};",
-            "gcd GCD;\n",
         ]
     },
     "pMODINV": {
@@ -2605,6 +2578,46 @@
             "        return mat = _rotate * mat;",
             "    }",
             "};\n",
+        ]
+    },
+    "mycinfile": {
+        "prefix": "mycinfile",
+        "body": [
+            "class file",
+            "{",
+            "public:",
+            "    vector<string> v;",
+            "    file(string file_path)",
+            "    {",
+            "        ifstream ifs(file_path);",
+            "        string s;",
+            "        while (getline(ifs, s))",
+            "        {",
+            "            v.push_back(s);",
+            "        }",
+            "        ifs.close();",
+            "    }",
+            "    inline string &operator[](int i)",
+            "    {",
+            "        return v[i];",
+            "    }",
+            "    std::__1::vector<std::__1::string>::iterator begin()",
+            "    {",
+            "        return v.begin();",
+            "    }",
+            "    std::__1::vector<std::__1::string>::iterator end()",
+            "    {",
+            "        return v.end();",
+            "    }",
+            "};\n",
+        ]
+    },
+    "mycin": {
+        "prefix": "mycin",
+        "body": [
+            "string input_txt = \"mycin.txt\";",
+            "ifstream ifs(input_txt);",
+            "cin.rdbuf(ifs.rdbuf());\n",
         ]
     },
 }
